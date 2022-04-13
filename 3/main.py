@@ -1,12 +1,12 @@
 class Error(Exception):
     pass
 
-class numberMismatch(Error):
+class NumberMismatch(Error):
     pass
 
-def not_hesapla(vize1,vize2,final):
+def not_hesapla(vize1, vize2, final):
     try:
-        if isinstance(vize1,int) and isinstance(vize2,int) and isinstance(final,int):
+        if isinstance(vize1, int) and isinstance(vize2, int) and isinstance(final, int):
             if vize1 >= 0 and vize1 <= 100 and vize2 >= 0 and vize2 <= 100 and final >= 0 and final <=100:
                 vize1_effect = vize1 * 3 / 10
                 vize2_effect = vize2 * 3 / 10
@@ -16,34 +16,44 @@ def not_hesapla(vize1,vize2,final):
 
                 if total_grade >= 90:
                     print("AA")
+
                 elif total_grade >= 85:
                     print("BA")
+
                 elif total_grade >= 80:
                     print("BB")
+
                 elif total_grade >= 75:
                     print("CB")
+
                 elif total_grade >= 70:
                     print("CC")
+
                 elif total_grade >= 65:
                     print("DC")
+
                 elif total_grade >= 60:
                     print("DD")
+
                 elif total_grade >= 55:
                     print("FD")
+
                 elif total_grade < 55:
                     print("FF")
+
             else:
-                raise numberMismatch
+                raise NumberMismatch
+
         else:
             raise TypeError
 
-    except(numberMismatch):
+    except(NumberMismatch):
         print("Not 0'dan küçük veya 100'den büyük olamaz")
 
     except(TypeError):
         print("Lütfen parametreleri integer giriniz")
 
-    except Exception as e:
-        print("Birşeyler ters gitti..." + e.__class__)
+    except Exception as error:
+        print("Birşeyler ters gitti..." + error.__class__)
 
-not_hesapla(100,40,65)
+not_hesapla(100, 40, 65)
