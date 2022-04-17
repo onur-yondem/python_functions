@@ -1,8 +1,10 @@
 class Error(Exception):
     pass
 
+
 class NumberMismatch(Error):
     pass
+
 
 def not_hesapla(vize1, vize2, final):
     try:
@@ -53,7 +55,5 @@ def not_hesapla(vize1, vize2, final):
     except(TypeError):
         print("Lütfen parametreleri integer giriniz")
 
-    except Exception as error:
-        print("Birşeyler ters gitti..." + error.__class__)
 
 not_hesapla(100, 40, 65)
