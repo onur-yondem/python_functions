@@ -1,8 +1,10 @@
 class Error(Exception):
     pass
 
+
 class SortError(Error):
     pass
+
 
 def bolunen_sayi_bulma(min_sayi, max_sayi, bolunecek_sayi):
     try:
@@ -29,10 +31,6 @@ def bolunen_sayi_bulma(min_sayi, max_sayi, bolunecek_sayi):
 
     except SortError:
         print("minimum sayı maksimum sayıdan büyük olamaz")
-
-    except Exception as error:
-        print("Birşeyler ters gitti..." + error.__class__)
-
-
+        
 
 bolunen_sayi_bulma(-25, 50, 5)
